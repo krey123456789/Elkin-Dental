@@ -278,7 +278,7 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-photo-bg">
-    <img src="img/foto-doctor.jpg" alt="Dr. Elkin Rey" />
+    <img src="foto-doctor.jpg" alt="Dr. Elkin Rey" />
   </div>
   <div class="container hero-content">
     <div class="hero-label">Odontología de alta gama</div>
@@ -315,7 +315,7 @@
 <section id="about">
   <div class="container about-grid">
     <div class="about-img-wrap reveal-left">
-      <img src="img/foto-sillon.jpg" alt="Dr Elkin Rey" />
+      <img src="foto-sillon.jpg" alt="Dr Elkin Rey" />
     </div>
     <div class="about-content reveal-right">
       <div>
@@ -371,19 +371,19 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item" data-label="Área de Diagnóstico Avanzado">
-        <img src="img/foto-area.jpg" alt="Área de Diagnóstico" />
+        <img src="foto-area.jpg" alt="Área de Diagnóstico" />
       </div>
       <div class="gallery-item" data-label="Unidad Clínica Premium">
-        <img src="img/foto-consultorio2.jpg" alt="Consultorio Premium" />
+        <img src="foto-consultorio2.jpg" alt="Consultorio Premium" />
       </div>
       <div class="gallery-item" data-label="Esterilización Certificada">
-        <img src="img/foto-cirugia.jpg" alt="Área de Cirugía" />
+        <img src="foto-cirugia.jpg" alt="Área de Cirugía" />
       </div>
       <div class="gallery-item" data-label="Sala de Espera &amp; Recepción">
-        <img src="img/foto-recepcion.jpg" alt="Recepción" />
+        <img src="foto-recepcion.jpg" alt="Recepción" />
       </div>
       <div class="gallery-item" data-label="Magnificación Óptica">
-        <img src="img/foto-sillon.jpg" alt="Equipos Dentales" />
+        <img src="foto-sillon.jpg" alt="Equipos Dentales" />
       </div>
     </div>
   </div>
