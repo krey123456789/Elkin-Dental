@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Elkin Rey | Odontólogo Estético &amp; Periodoncia · Colombia</title>
+  <meta name="description" content="Odontólogo en Colombia especializado en estética dental, implantes, periodoncia y rehabilitación oral. Atención premium y personalizada. Agenda tu cita hoy." />
+  <meta name="keywords" content="odontólogo Colombia, estética dental Colombia, implantes dentales, periodoncia, diseño de sonrisa, coronas dentales, limpieza dental, Dr Elkin Rey" />
+  <meta property="og:title" content="Dr. Elkin Rey · Odontólogo Premium" />
+  <meta property="og:description" content="Transforma tu sonrisa con precisión clínica y estética de alto nivel." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --black:#0a0a0a;--off-black:#141414;--dark:#1c1c1c;--mid:#3a3a3a;
+      --gray:#888;--light:#e8e8e8;--white:#fafafa;
+      --accent:#c8b87a;--accent2:#6b9080;
+      --font-display:'Cormorant Garamond',serif;
+      --font-body:'DM Sans',sans-serif;
+      --font-label:'Bebas Neue',sans-serif;
+      --transition:0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    html{font-size:16px}
+    body{background:var(--black);color:var(--white);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;object-fit:cover}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:var(--black)}
+    ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+    .reveal-left.visible{opacity:1;transform:none}
+    .reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+    .reveal-right.visible{opacity:1;transform:none}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background .4s,padding .4s}
+    nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 0;border-bottom:1px solid rgba(200,184,122,.12)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:var(--font-display);font-weight:500;font-size:1.15rem;letter-spacing:.04em}
+    .nav-logo span{color:var(--accent)}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light);transition:color .3s;font-weight:400}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:var(--black)!important;padding:9px 22px;font-weight:500!important;letter-spacing:.14em!important}
+    .nav-cta:hover{background:#d4c68c!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .hamburger span{width:24px;height:1.5px;background:var(--white);transition:var(--transition)}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--off-black);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-family:var(--font-display);font-size:2.2rem;font-weight:400;color:var(--white);letter-spacing:.04em;transition:color .3s}
+    .mobile-menu a:hover{color:var(--accent)}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:1.8rem;cursor:pointer;color:var(--gray)}
+
+    /* HERO */
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a 0%,#141414 40%,#1a1a18 100%)}
+    .hero-photo-bg{position:absolute;right:0;top:0;bottom:0;width:52%;overflow:hidden}
+    .hero-photo-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.55) contrast(1.1)}
+    .hero-photo-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,transparent 50%);z-index:1}
+    .hero-photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--black) 0%,transparent 40%);z-index:1}
+    .hero-content{position:relative;z-index:2;max-width:680px;padding-top:100px}
+    .hero-label{font-family:var(--font-label);font-size:.72rem;letter-spacing:.3em;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+    .hero-label::before{content:'';display:inline-block;width:32px;height:1px;background:var(--accent)}
+    .hero-headline{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.08;letter-spacing:-.01em;margin-bottom:28px}
+    .hero-headline em{font-style:italic;color:var(--accent)}
+    .hero-sub{font-size:1.05rem;color:var(--light);font-weight:300;max-width:480px;margin-bottom:48px;line-height:1.75}
+    .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--black);padding:16px 32px;font-family:var(--font-body);font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;transition:var(--transition);border:1px solid var(--accent)}
+    .btn-primary:hover{background:transparent;color:var(--accent)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.25);color:var(--white);padding:16px 32px;font-family:var(--font-body);font-size:.85rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;transition:var(--transition)}
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+    .hero-trust{display:flex;gap:40px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:40px}
+    .trust-item{display:flex;flex-direction:column;gap:4px}
+    .trust-num{font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--accent);line-height:1}
+    .trust-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+    .scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:float 2.5s ease-in-out infinite}
+    .scroll-indicator span{font-size:.65rem;letter-spacing:.2em;color:var(--gray);text-transform:uppercase}
+    .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gray),transparent)}
+    @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+    /* MARQUEE */
+    .marquee-strip{background:var(--accent);padding:14px 0;overflow:hidden;white-space:nowrap}
+    .marquee-track{display:inline-flex;animation:marquee 22s linear infinite}
+    .marquee-track span{font-family:var(--font-label);font-size:.78rem;letter-spacing:.2em;color:var(--black);padding:0 32px}
+    .marquee-track span.dot::before{content:'◆';margin-right:32px;opacity:.5}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* SECTIONS */
+    section{padding:120px 0}
+    .section-label{font-family:var(--font-label);font-size:.7rem;letter-spacing:.3em;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+    .section-label::before{content:'';width:24px;height:1px;background:var(--accent)}
+    .section-title{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;line-height:1.15;margin-bottom:20px}
+    .section-title em{font-style:italic;color:var(--accent)}
+    .section-sub{font-size:1rem;color:var(--gray);max-width:500px;line-height:1.75}
+
+    /* TRUST */
+    #trust{padding:80px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+    .trust-card{background:var(--off-black);padding:40px 32px;display:flex;flex-direction:column;gap:16px;border-left:2px solid transparent;transition:border-color .3s,background .3s}
+    .trust-card:hover{background:var(--dark);border-left-color:var(--accent)}
+    .trust-icon{font-size:1.6rem}
+    .trust-card-title{font-family:var(--font-display);font-size:1.25rem;font-weight:400}
+    .trust-card-text{font-size:.85rem;color:var(--gray);line-height:1.65}
+
+    /* ABOUT */
+    #about{background:var(--off-black)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .about-img-wrap{position:relative}
+    .about-img-wrap img{width:100%;height:620px;object-fit:cover;object-position:top center;filter:grayscale(10%) contrast(1.05)}
+    .about-img-wrap::after{content:'';position:absolute;bottom:-20px;right:-20px;width:60%;height:60%;border:1px solid rgba(200,184,122,.3);pointer-events:none}
+    .about-img-wrap::before{content:'Dr. Elkin Rey';position:absolute;bottom:24px;left:24px;font-family:var(--font-label);font-size:.7rem;letter-spacing:.22em;color:var(--white);background:var(--accent);padding:8px 16px;z-index:2}
+    .about-content{display:flex;flex-direction:column;gap:28px}
+    .about-quote{font-family:var(--font-display);font-size:1.6rem;font-weight:300;font-style:italic;line-height:1.5;border-left:2px solid var(--accent);padding-left:24px;color:var(--light)}
+    .about-text{font-size:.95rem;color:var(--gray);line-height:1.85}
+    .about-creds{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    .cred-item{display:flex;align-items:flex-start;gap:14px;font-size:.88rem}
+    .cred-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;margin-top:7px;flex-shrink:0}
+    .cred-text{color:var(--light)}
+    .cred-text strong{color:var(--white);font-weight:500;display:block;margin-bottom:2px}
+
+    /* SERVICES */
+    #servicios{background:var(--black)}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
+    .service-card{background:var(--off-black);padding:48px 36px;position:relative;overflow:hidden;border-bottom:2px solid transparent;transition:border-color .35s,background .35s,opacity .5s ease,transform .5s ease}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-card:hover{background:var(--dark);border-bottom-color:var(--accent)}
+    .service-num{font-family:var(--font-label);font-size:3.5rem;color:rgba(200,184,122,.08);position:absolute;top:24px;right:28px;line-height:1}
+    .service-icon{font-size:1.8rem;margin-bottom:20px}
+    .service-name{font-family:var(--font-display);font-size:1.4rem;font-weight:400;margin-bottom:12px}
+    .service-desc{font-size:.85rem;color:var(--gray);line-height:1.7;margin-bottom:24px}
+    .service-cta{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:8px;transition:gap .3s}
+    .service-card:hover .service-cta{gap:14px}
+
+    /* GALLERY */
+    #consultorio{background:var(--off-black)}
+    .gallery-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:24px}
+    .gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:320px 260px;gap:4px}
+    .gallery-item{overflow:hidden;position:relative}
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s;filter:brightness(.85) contrast(1.05)}
+    .gallery-item:hover img{transform:scale(1.04);filter:brightness(1) contrast(1.05)}
+    .gallery-item::after{content:attr(data-label);position:absolute;bottom:16px;left:16px;font-family:var(--font-label);font-size:.65rem;letter-spacing:.2em;color:var(--white);background:rgba(0,0,0,.55);padding:5px 12px;backdrop-filter:blur(8px)}
+
+    /* CASOS */
+    #casos{background:var(--black)}
+    .casos-placeholder{border:1px dashed rgba(200,184,122,.25);padding:80px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+    .casos-placeholder p{color:var(--gray);font-size:.9rem;max-width:380px}
+    .casos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:16px;width:100%}
+    .caso-slot{height:280px;background:var(--off-black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+    .caso-slot span{font-size:2rem;opacity:.2}
+    .caso-slot p{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray)}
+
+    /* TESTIMONIALS */
+    #testimonios{background:var(--off-black)}
+    .testimonios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+    .testimonial-card{background:var(--dark);padding:40px 32px;display:flex;flex-direction:column;gap:20px}
+    .stars{color:var(--accent);font-size:.85rem;letter-spacing:3px}
+    .testimonial-quote{font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.65;color:var(--light)}
+    .testimonial-author{display:flex;flex-direction:column;gap:4px;margin-top:auto}
+    .t-name{font-size:.88rem;font-weight:500}
+    .t-role{font-size:.75rem;color:var(--gray);letter-spacing:.1em}
+
+    /* FAQ */
+    #faq{background:var(--black)}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px}
+    .faq-item{background:var(--off-black);border-left:2px solid transparent;transition:border-color .3s}
+    .faq-item.active{border-left-color:var(--accent)}
+    .faq-q{width:100%;background:none;border:none;color:var(--white);font-family:var(--font-body);font-size:.92rem;font-weight:400;text-align:left;padding:28px 32px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .3s}
+    .faq-q:hover{color:var(--accent)}
+    .faq-arrow{font-size:1rem;transition:transform .3s;flex-shrink:0}
+    .faq-item.active .faq-arrow{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 32px;font-size:.88rem;color:var(--gray);line-height:1.75}
+    .faq-item.active .faq-a{max-height:200px;padding:0 32px 28px}
+
+    /* CTA */
+    #cta{background:var(--off-black);padding:120px 0;position:relative;overflow:hidden;text-align:center}
+    #cta::before{content:'SONRISA';position:absolute;font-family:var(--font-label);font-size:clamp(80px,18vw,200px);color:rgba(200,184,122,.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:.2em}
+    .cta-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:32px}
+    .cta-title{font-family:var(--font-display);font-size:clamp(2.2rem,5vw,4rem);font-weight:300;line-height:1.15;max-width:700px}
+    .cta-title em{font-style:italic;color:var(--accent)}
+    .cta-sub{color:var(--gray);font-size:1rem;max-width:480px;line-height:1.75}
+    .cta-buttons{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+    .cta-phone{font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--light);letter-spacing:.08em}
+    .cta-phone span{color:var(--accent)}
+
+    /* FOOTER */
+    footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:64px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:56px}
+    .footer-brand p{font-size:.88rem;color:var(--gray);max-width:320px;line-height:1.75;margin-top:16px}
+    .footer-logo{font-family:var(--font-display);font-size:1.4rem;font-weight:400}
+    .footer-logo span{color:var(--accent)}
+    .footer-col h4{font-family:var(--font-label);font-size:.7rem;letter-spacing:.22em;color:var(--accent);margin-bottom:20px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col ul li a{font-size:.88rem;color:var(--gray);transition:color .3s}
+    .footer-col ul li a:hover{color:var(--white)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-bottom p{font-size:.78rem;color:var(--mid)}
+    .footer-bottom a{color:var(--gray)}
+
+    /* WHATSAPP FAB */
+    .whatsapp-fab{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:14px 22px 14px 18px;border-radius:50px;font-size:.82rem;font-weight:500;letter-spacing:.08em;box-shadow:0 8px 32px rgba(37,211,102,.35);transition:transform .3s,box-shadow .3s;animation:fab-pulse 3s ease-in-out infinite}
+    .whatsapp-fab:hover{transform:scale(1.05);box-shadow:0 12px 40px rgba(37,211,102,.5)}
+    .whatsapp-fab svg{width:22px;height:22px;flex-shrink:0}
+    @keyframes fab-pulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.35)}50%{box-shadow:0 8px 48px rgba(37,211,102,.55)}}
+    .progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:999;width:0%;transition:width .1s}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .trust-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr;gap:48px}
+      .about-img-wrap img{height:480px}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+      .gallery-item:first-child{grid-row:span 1}
+      .testimonios-grid{grid-template-columns:1fr 1fr}
+      .faq-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      section{padding:80px 0}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .hero-photo-bg{width:100%;opacity:.35}
+      .hero-content{max-width:100%;padding-top:80px}
+      .hero-headline{font-size:2.6rem}
+      .hero-trust{gap:24px}
+      .trust-grid{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr;grid-template-rows:260px 260px 200px 200px 200px}
+      .casos-grid{grid-template-columns:1fr}
+      .testimonios-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:40px}
+      .whatsapp-fab span{display:none}
+      .whatsapp-fab{padding:14px;border-radius:50%}
+      .about-img-wrap::after{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav id="mainNav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">Dr. <span>Elkin Rey</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#consultorio">Consultorio</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="https://wa.link/tvw3bl" target="_blank" class="nav-cta">Agendar cita</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" id="mobileClose">✕</span>
+  <a href="#about" onclick="closeMobile()">Sobre mí</a>
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#consultorio" onclick="closeMobile()">Consultorio</a>
+  <a href="#testimonios" onclick="closeMobile()">Testimonios</a>
+  <a href="https://wa.link/tvw3bl" target="_blank" onclick="closeMobile()">Agendar cita →</a>
+</div>
+
+<a href="https://wa.link/tvw3bl" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Agenda tu cita</span>
+</a>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-photo-bg">
+    <img src="img/foto-doctor.jpg" alt="Dr. Elkin Rey" />
+  </div>
+  <div class="container hero-content">
+    <div class="hero-label">Odontología de alta gama</div>
+    <h1 class="hero-headline">Precisión clínica.<br>Estética <em>superior</em>.</h1>
+    <p class="hero-sub">Especialista en Periodoncia, implantes dentales y diseño de sonrisa. Una experiencia exclusiva diseñada para transformar tu salud y confianza.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.link/tvw3bl" target="_blank" class="btn-primary">Agendar consulta</a>
+      <a href="#servicios" class="btn-secondary">Ver Especialidades</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-num">12+</span><span class="trust-label">Años de experiencia</span></div>
+      <div class="trust-item"><span class="trust-num">2.5k+</span><span class="trust-label">Sonrisas diseñadas</span></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span>Deslizar</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>ESTÉTICA DENTAL</span><span class="dot">PERIODONCIA</span><span class="dot">IMPLANTES DENTALES</span><span class="dot">REHABILITACIÓN ORAL</span><span class="dot">DISEÑO DE SONRISA</span>
+    <span>ESTÉTICA DENTAL</span><span class="dot">PERIODONCIA</span><span class="dot">IMPLANTES DENTALES</span><span class="dot">REHABILITACIÓN ORAL</span><span class="dot">DISEÑO DE SONRISA</span>
+  </div>
+</div>
+
+<section id="trust" class="container">
+  <div class="trust-grid">
+    <div class="trust-card"><div class="trust-icon" style="color:var(--accent)">✦</div><h3 class="trust-card-title">Enfoque Premium</h3><p class="trust-card-text">Atención 100% personalizada en un entorno clínico diseñado para tu total tranquilidad.</p></div>
+    <div class="trust-card"><div class="trust-icon" style="color:var(--accent)">🛡️</div><h3 class="trust-card-title">Materiales Certificados</h3><p class="trust-card-text">Utilizamos componentes biomédicos de marcas líderes globales en implantología.</p></div>
+    <div class="trust-card"><div class="trust-icon" style="color:var(--accent)">🔬</div><h3 class="trust-card-title">Alta Tecnología</h3><p class="trust-card-text">Diagnósticos con magnificación y planificación digital para resultados milimétricos.</p></div>
+    <div class="trust-card"><div class="trust-icon" style="color:var(--accent)">✨</div><h3 class="trust-card-title">Naturalidad</h3><p class="trust-card-text">Buscamos la armonía perfecta entre la función biológica y la belleza estética.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-img-wrap reveal-left">
+      <img src="img/foto-sillon.jpg" alt="Dr Elkin Rey" />
+    </div>
+    <div class="about-content reveal-right">
+      <div>
+        <div class="section-label">Trayectoria</div>
+        <h2 class="section-title">Ciencia detrás de cada <em>diseño</em></h2>
+      </div>
+      <p class="about-quote">"La excelencia en odontología no es una casualidad; es el resultado de la disciplina científica, la destreza técnica y la sensibilidad estética."</p>
+      <p class="about-text">El Dr. Elkin Rey combina años de formación avanzada en Periodoncia e implantología con una visión artística de la rehabilitación oral. Su enfoque se centra en devolver no solo la belleza externa, sino la salud estructural y funcional de toda la cavidad oral.</p>
+      <div class="about-creds">
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Especialista en Periodoncia</strong>Formación avanzada en salud de tejidos y soporte dental.</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Experto en Implantología Oral</strong>Reemplazo de piezas dentales con técnicas mínimamente invasivas.</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text"><strong>Miembro de Sociedades Científicas</strong>Actualización continua en congresos internacionales de estética dental.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Especialidades</div>
+      <h2 class="section-title">Tratamientos de <em>Elite</em></h2>
+      <p class="section-sub">Soluciones clínicas avanzadas ejecutadas bajo los más estrictos estándares internacionales.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div><div class="service-icon">💎</div><h3 class="service-name">Diseño de Sonrisa</h3><p class="service-desc">Carillas cerámicas y de alta densidad para una armonía visual perfecta, respetando la estructura biológica.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div><div class="service-icon">🔩</div><h3 class="service-name">Implantes Dentales</h3><p class="service-desc">Restauración permanente de piezas perdidas mediante pernos de titanio puro integrados biológicamente.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div><div class="service-icon">🩸</div><h3 class="service-name">Periodoncia Avanzada</h3><p class="service-desc">Tratamiento especializado de encías y tejidos de soporte para asegurar la base de una boca sana.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div><div class="service-icon">👑</div><h3 class="service-name">Rehabilitación Oral</h3><p class="service-desc">Coronas, incrustaciones y prótesis sobre implantes con precisión computarizada CAD-CAM.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div><div class="service-icon">🧼</div><h3 class="service-name">Profilaxis Ultrasónica</h3><p class="service-desc">Limpieza profunda con remoción de cálculo de alta precisión y desintoxicación periodontal.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div><div class="service-icon">🔆</div><h3 class="service-name">Blanqueamiento Láser</h3><p class="service-desc">Aclaramiento dental seguro y eficaz en pocas sesiones, sin alterar el esmalte natural.</p><a href="https://wa.link/tvw3bl" target="_blank" class="service-cta">Consultar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="consultorio">
+  <div class="container">
+    <div class="gallery-intro reveal">
+      <div><div class="section-label">Instalaciones</div><h2 class="section-title">Tecnología &amp; <em>Confort</em></h2></div>
+      <p class="section-sub">Un espacio bioseguro de vanguardia equipado para ofrecerte la máxima comodidad durante tu tratamiento.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-label="Área de Diagnóstico Avanzado">
+        <img src="img/foto-area.jpg" alt="Área de Diagnóstico" />
+      </div>
+      <div class="gallery-item" data-label="Unidad Clínica Premium">
+        <img src="img/foto-consultorio2.jpg" alt="Consultorio Premium" />
+      </div>
+      <div class="gallery-item" data-label="Esterilización Certificada">
+        <img src="img/foto-cirugia.jpg" alt="Área de Cirugía" />
+      </div>
+      <div class="gallery-item" data-label="Sala de Espera &amp; Recepción">
+        <img src="img/foto-recepcion.jpg" alt="Recepción" />
+      </div>
+      <div class="gallery-item" data-label="Magnificación Óptica">
+        <img src="img/foto-sillon.jpg" alt="Equipos Dentales" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="casos">
+  <div class="container">
+    <div class="casos-placeholder reveal">
+      <div style="font-size: 2.5rem; color: var(--accent);">📊</div>
+      <h3 class="trust-card-title">Casos Clínicos de Éxito</h3>
+      <p class="about-text" style="text-align: center;">Por regulaciones de ética médica y privacidad, las fotografías de "Antes y Después" de alta resolución están disponibles para visualización privada durante tu consulta presencial de valoración.</p>
+      <div class="casos-grid">
+        <div class="caso-slot"><span>🦷</span><p>Rehabilitación sobre Implantes</p></div>
+        <div class="caso-slot"><span>✨</span><p>Ortodoncia &amp; Carillas</p></div>
+        <div class="caso-slot"><span>🩺</span><p>Cirugía Plástica Periodontal</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonios">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Experiencias</div>
+      <h2 class="section-title">Opiniones de nuestros <em>pacientes</em></h2>
+    </div>
+    <div class="testimonios-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"El nivel de detalle y perfeccionismo del Dr. Elkin es increíble. Me realicé un diseño de sonrisa y el resultado superó todas mis expectativas de forma muy natural."</p>
+        <div class="testimonial-author"><span class="t-name">Carlos Mendoza</span><span class="t-role">Paciente de Diseño Dental</span></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"Tenía mucho temor por los implantes, pero el procedimiento fue totalmente indoloro y muy rápido. Excelente especialista y equipo de atención."</p>
+        <div class="testimonial-author"><span class="t-name">Dra. Mariana Restrepo</span><span class="t-role">Paciente de Implantes</span></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-quote">"Su especialidad en periodoncia salvó mis encías. Un diagnóstico honesto, profesional y con la mejor tecnología disponible en Colombia."</p>
+        <div class="testimonial-author"><span class="t-name">Andrés Felipe Gómez</span><span class="t-role">Paciente de Periodoncia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Respuestas</div>
+      <h2 class="section-title">Preguntas <em>Frecuentes</em></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo dura el tratamiento de implantes? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">La colocación del implante toma menos de una hora. El proceso de oseointegración (fijación al hueso) tarda de 3 a 4 meses antes de colocar la corona definitiva, garantizando el éxito a largo plazo.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Las carillas de porcelana desgastan mucho los dientes? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Con las técnicas micro-invasivas actuales, el desgaste es mínimo (de fracciones de milímetro) o nulo en algunos casos, preservando el esmalte dental intacto.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Por qué es importante ver a un Periodoncista? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">El periodoncista es el especialista en los tejidos que soportan los dientes. Sin encías ni hueso sanos, cualquier diseño de sonrisa o tratamiento estético fracasará con el tiempo.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué medios de pago reciben en la clínica? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Aceptamos tarjetas de crédito internacionales, transferencias bancarias directas y efectivo. Ofrecemos opciones de financiamiento para planes de tratamiento integrales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container cta-inner reveal">
+    <div class="section-label" style="justify-content: center;">Contacto prioritario</div>
+    <h2 class="cta-title">¿Listo para transformar tu <em>salud dental</em>?</h2>
+    <p class="cta-sub">Agenda una sesión clínica de valoración para diseñar una solución a tu medida exacta.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.link/tvw3bl" target="_blank" class="btn-primary">Agendar por WhatsApp</a>
+    </div>
+    <div class="cta-phone">Línea de Atención: <span>+57 (300) 123-4567</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Dr. <span>Elkin Rey</span></div>
+      <p>Odontología Estética Avanzada y Periodoncia de nivel internacional en Colombia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#servicios">Especialidades</a></li>
+        <li><a href="#consultorio">Consultorio</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.link/tvw3bl" target="_blank">Atención VIP WhatsApp</a></li>
+        <li><a href="#">info@drelkinrey.com</a></li>
+        <li><a href="#">Colombia</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Dr. Elkin Rey. Todos los derechos reservados. Diseñado bajo estándares Premium.</p>
+    <p><a href="#hero">Ir arriba ↑</a></p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    const progress = document.getElementById('progressBar');
+    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+    
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    
+    if (totalScroll > 0) {
+      progress.style.width = (window.scrollY / totalScroll) * 100 + '%';
+    }
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    if (!isOpen) item.classList.add('active');
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
